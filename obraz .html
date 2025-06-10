@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    .blur {
+      filter: blur(4px);
+    }
+    .szary {
+      filter: grayscale(100%);
+    }
+    img {
+      transition: filter 0.3s ease;
+      width: 300px;
+      display: block;
+      margin-top: 20px;
+    }
+    div {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<img id="obrazek" src="obraz.jpg" alt="obraz" class="">
+
+
+  <div>
+    <button onclick="dodajBlur()">Dodaj blur</button>
+    <button onclick="usunEfekty()">Usuń efekty</button>
+    <button onclick="zamienNaSzary()">Zamień na grayscale</button>
+    <button onclick="toggleBlur()">Przełącz blur</button>
+  </div>
+
+  <script>
+    function dodajBlur() {
+      const obraz = document.getElementById("obrazek");
+      obraz.classList.add("blur");
+    }
+
+    function usunEfekty() {
+      const obraz = document.getElementById("obrazek");
+      obraz.classList.remove("blur", "szary");
+    }
+
+    function zamienNaSzary() {
+      const obraz = document.getElementById("obrazek");
+      obraz.classList.replace("blur", "szary");
+    }
+
+    function toggleBlur() {
+      const obraz = document.getElementById("obrazek");
+      obraz.classList.toggle("blur");
+    }
+  </script>
+
+</body>
+</html>
